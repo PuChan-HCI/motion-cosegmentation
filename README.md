@@ -67,7 +67,19 @@ Part swaping with our method for VoxCeleb dataset. Each triplet shows source ima
 
 We support ```python3```. To install the dependencies run:
 ```
+# Create python3.7 virtual environment
+conda create -n gaze python=3.7
+
+# Clone this repository
+git clone https://github.com/AliaksandrSiarohin/motion-cosegmentation.git
+
+# Installation
+cd .\motion-cosegmentation\
 pip install -r requirements.txt
+
+# PyTorch (only support GPU)
+pip install torch==1.13.1+cu117 torchvision==0.14.1+cu117 torchaudio==0.13.1
+--extra-index-url https://download.pytorch.org/whl/cu117
 ```
 
 ### YAML configs
@@ -82,6 +94,9 @@ Checkpoints can be found under following links: [yandex-disk](https://yadi.sk/d/
 To run a demo, download checkpoint and run the following command:
 ```
 python part_swap.py  --config config/dataset_name.yaml --target_video path/to/target --source_image path/to/source --checkpoint path/to/checkpoint --swap_index 0,1
+
+python .\part_swap.py --config .\config\vox-256-sem-15segments.yaml --target_video .\video\12.mp4 --source .\image\26.png --checkpoint .\checkpoint\vox-15segments.pth --swap_index 0,1
+
 ```
 The result will be stored in ```result.mp4```.
 

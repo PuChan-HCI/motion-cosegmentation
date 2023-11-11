@@ -89,9 +89,8 @@ There are several configuration (```config/dataset_name.yaml```) files one for e
 ### Pre-trained checkpoints
 Checkpoints can be found under following links: [yandex-disk](https://yadi.sk/d/2hTyhEcqo_5ruA) and [google-drive](https://drive.google.com/open?id=1SsBifjoM_qO0iFzb8wLlsz_4qW2j8dZe).
 
-### Part-swap demo
-
-To run a demo, download checkpoint and run the following command:
+### Part-swap demo (video)
+To run a demo using a video, download checkpoint and run the following command:
 ```
 python part_swap.py  --config config/dataset_name.yaml --target_video path/to/target --source_image path/to/source --checkpoint path/to/checkpoint --swap_index 0,1
 
@@ -110,6 +109,11 @@ which is a fork of @zllrunning.
 
 * Also for the reference we provide [First Order Motion Model](https://github.com/AliaksandrSiarohin/first-order-model) based alignment, use ```--first_order_motion_model``` and the correspoinding checkpoint. This allignment can only be used along with ```--supervised``` option.
 
+### Part-swap demo (webcam)
+To run a demo using a webcam, download checkpoint and run the following command:
+```
+python .\part_swap_webcam.py --config .\config\vox-256-sem-5segments.yaml --source .\image\16.png --checkpoint .\checkpoint\vox-5segments.pth
+```
 
 ### Colab Demo
 
